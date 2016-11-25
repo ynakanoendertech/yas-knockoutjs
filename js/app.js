@@ -1,8 +1,8 @@
 "use strict";
 
-require(['jquery'], function($) {
+require(['jquery', 'knockout'], function($, knockout) {
 
     $(document).ready(function() {
-        console.log('app.js');
+        //
     });
 });
