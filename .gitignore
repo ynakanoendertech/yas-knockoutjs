@@ -26,3 +26,6 @@ tmp*
 nbproject
 .idea
 
+# Ignore downloaded modules
+/node_modules
+
