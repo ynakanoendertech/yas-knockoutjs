@@ -9,5 +9,9 @@ define(['ko'], function(ko) {
 
         console.dir(typeof this.test);
         console.dir(typeof this.firstName);
+
+        this.fullName = ko.computed(function() {
+            return this.firstName() + " " + this.lastName();
+        }, this);  // Defines the value of this, which is function c() of KnockoutJs
     };
 });
