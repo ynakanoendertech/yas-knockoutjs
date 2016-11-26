@@ -1,17 +1,10 @@
 "use strict";
 
-require(['jquery', 'ko',], function($, ko) {
+require(['jquery', 'ko', 'AppViewModel'], function($, ko, AppViewModel) {
 
     $(document).ready(function() {
-
-        // View model
-        function AppViewModel() {
-            this.firstName = ko.observable("Bert");
-            this.lastName = ko.observable("Bertington");
-        }
 
         // Activate
         ko.applyBindings(new AppViewModel());
     });
-
 });
