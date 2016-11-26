@@ -5,5 +5,9 @@ define(['ko'], function(ko) {
     return function AppViewModel() {
         this.firstName = ko.observable("Bert");
         this.lastName = ko.observable("Bertington");
+        this.test = 1;
+
+        console.dir(typeof this.test);
+        console.dir(typeof this.firstName);
     };
 });
