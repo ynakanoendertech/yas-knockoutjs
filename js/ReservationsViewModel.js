@@ -18,5 +18,11 @@ define(['ko', 'SeatReservation'], function(ko, SeatReservation) {
             new SeatReservation("Steve", self.availableMeals[0]),
             new SeatReservation("Bert", self.availableMeals[0])
         ]);
+
+        // Operations
+        self.addSeat = function() {
+            self.seats.push(new SeatReservation("", self.availableMeals[0]));
+
+        };
     };
 });
