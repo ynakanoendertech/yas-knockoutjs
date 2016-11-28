@@ -17,5 +17,10 @@ define(['ko'], function(ko) {
         self.fullName = ko.computed(function() {
             return self.firstName() + " " + self.lastName();
         });  // Defines the value of this, which is function c() of KnockoutJs
+
+        self.capitalizeLastName = function() {
+            var currentVal = self.lastName();
+            self.lastName(currentVal.toUpperCase());
+        };
     };
 });
