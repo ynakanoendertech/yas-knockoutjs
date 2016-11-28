@@ -1,8 +1,10 @@
 "use strict";
 
-require(['jquery', 'knockout'], function($, knockout) {
+require(['jquery', 'ko', 'AppViewModel'], function($, ko, AppViewModel) {
 
     $(document).ready(function() {
-        //
+
+        // Activate
+        ko.applyBindings(new AppViewModel());
     });
 });
