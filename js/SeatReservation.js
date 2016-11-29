@@ -8,5 +8,10 @@ define(['ko'], function(ko) {
 
         self.name = name;
         self.meal = ko.observable(initialMeal);
+
+        self.formattedPrice = ko.computed(function() {
+            var price = self.meal().price;
+            return price ? "$" + price.toFixed(2) : "None";
+        });
     };
 });
