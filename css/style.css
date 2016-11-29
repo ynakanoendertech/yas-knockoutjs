@@ -1,3 +1,13 @@
 .test {
   color: orange;
 }
+.folders {
+  list-style: none;
+}
+.folders li {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+  border: 1px solid #efefef;
+  padding: 10px;
+}
