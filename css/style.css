@@ -11,3 +11,6 @@
   border: 1px solid #efefef;
   padding: 10px;
 }
+.folders li.selected {
+  background-color: rgba(255, 140, 0, 0.5);
+}

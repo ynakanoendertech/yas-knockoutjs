@@ -6,6 +6,13 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
+        // Data
         self.folders = ['Inbox', 'Archive', 'Sent', 'Spam'];
+        self.chosenFolderId = ko.observable();
+
+        // Behaviors
+        self.goToFolder = function(folder) {
+          self.chosenFolderId(folder);
+        };
     };
 });
