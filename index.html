@@ -70,7 +70,9 @@
             Your country:
             <select data-bind="
                 options: availableCountries,
-                optionsText: 'countryName',
+                optionsText: function(item) {
+                    return item.countryName + ' (pop: ' + item.countryPopulation + ')'
+                },
                 value: selectedCountry,
                 optionsCaption: 'Choose...'
             "></select>
