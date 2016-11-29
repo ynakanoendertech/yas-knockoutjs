@@ -43,5 +43,43 @@
 
     <button data-bind="click: addSeat">Reserve another seat</button>
 
+    <hr>
+    <div>
+        <div>Cats</div>
+        <select data-bind="options: $root.cats"></select>
+    </div>
+
+    <hr>
+    <div>
+        <div>Dogs</div>
+        <select data-bind="
+            options: $root.dogs,
+            optionsText: 'dogName',
+            optionsValue: 'dogAge',
+            value: selectedDogAge
+        "></select>
+        <div data-bind="visible: selectedDogAge">
+            Selected dog age: <strong data-bind="text: selectedDogAge()"></strong>
+        </div>
+    </div>
+
+    <hr>
+    <div>
+        <div>Country</div>
+        <div>
+            Your country:
+            <select data-bind="
+                options: availableCountries,
+                optionsText: 'countryName',
+                value: selectedCountry,
+                optionsCaption: 'Choose...'
+            "></select>
+        </div>
+        <div data-bind="visible: selectedCountry">
+            You have chosen a country with population
+            <strong data-bind="text: selectedCountry() ? selectedCountry().countryPopulation : 'unknown'"></strong>
+        </div>
+    </div>
+
 </body>
 </html>

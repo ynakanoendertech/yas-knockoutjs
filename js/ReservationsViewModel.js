@@ -2,6 +2,11 @@
 define(['ko', 'SeatReservation'], function(ko, SeatReservation) {
     "use strict";
 
+    var Country = function(name, population) {
+        this.countryName = name;
+        this.countryPopulation = population;
+    };
+
     return function ReservationsViewModel() {
         // Preserve this
         var self = this;
@@ -24,5 +29,27 @@ define(['ko', 'SeatReservation'], function(ko, SeatReservation) {
             self.seats.push(new SeatReservation("", self.availableMeals[0]));
 
         };
+
+        // Test data
+
+        self.cats = ko.observableArray([
+            "Abby",
+            "Bling",
+            "Candy"
+        ]);
+
+        self.dogs = [
+            { dogName: "Dilla", dogAge: 1 },
+            { dogName: "Epoc", dogAge: 2 },
+            { dogName: "Flips", dogAge: 3 }
+        ];
+        self.selectedDogAge = ko.observable();
+
+        self.availableCountries = ko.observableArray([
+            new Country("UK", 65000000),
+            new Country("USA", 320000000),
+            new Country("Sweden", 29000000)
+        ]);
+        self.selectedCountry = ko.observable();
     };
 });
