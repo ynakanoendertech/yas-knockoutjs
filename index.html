@@ -25,6 +25,7 @@
                 <th>Passenger name</th>
                 <th>Meal</th>
                 <th>Surcharge</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <!-- Todo: Generate table body -->
@@ -37,6 +38,9 @@
                     <select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
                 </td>
                 <td data-bind="text: formattedPrice"></td>
+                <td>
+                    <a href="#" data-bind="click: $root.removeSeat">Remove</a>
+                </td>
             </tr>
         </tbody>
     </table>
