@@ -16,5 +16,9 @@
 </head>
 <body>
     <div class="test">Test</div>
+
+    <ul data-bind="foreach: folders">
+        <li data-bind="text: $data"></li>
+    </ul>
 </body>
 </html>

@@ -3,6 +3,9 @@ define(['ko'], function(ko) {
 
     // View model
     return function WebmailViewModel() {
+        // Preserve this
+        var self = this;
 
+        self.folders = ['Inbox', 'Archive', 'Sent', 'Spam'];
     };
 });
