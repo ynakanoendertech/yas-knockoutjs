@@ -34,7 +34,8 @@
 
     <hr>
 
-    <div data-bind="css: giantTypeClass"><strong data-bind="text: giantTypeLabel()"></strong></div>
+    <div data-bind="css: giantTypeClass">
+        <!-- ko text: giantTypeLabel() --><!--/ko-->
     <input type="button" value="Change" data-bind="click: toggleGiantType" />
 </body>
 </html>
