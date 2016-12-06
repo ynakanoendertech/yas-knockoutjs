@@ -31,5 +31,10 @@
 
     <div data-bind="css: profitStatus">Profit information: <strong data-bind="text: currentProfit"></strong></div>
     <input type="button" value="Toggle" data-bind="click: toggleProfitValue" />
+
+    <hr>
+
+    <div data-bind="css: giantTypeClass"><strong data-bind="text: giantTypeLabel()"></strong></div>
+    <input type="button" value="Change" data-bind="click: toggleGiantType" />
 </body>
 </html>
