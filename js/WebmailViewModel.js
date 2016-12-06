@@ -17,8 +17,13 @@ define(['ko'], function(ko) {
 
         // CSS binding
         self.currentProfit = ko.observable(150000);
-        self.setNegativeProfit = function() {
-            self.currentProfit(-50);
+        self.profitStatus = ko.computed(function() {
+            return self.currentProfit() < 0 ? "profitWarning" : "profitPositive";
+        });
+        self.toggleProfitValue = function() {
+            var current = self.currentProfit();
+            var newValue = current * (-1);
+            self.currentProfit(newValue);
         };
     };
 });

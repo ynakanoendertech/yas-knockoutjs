@@ -29,7 +29,7 @@
 
     <hr>
 
-    <div data-bind="css: { profitWarning: currentProfit() < 0 }">Profit information</div>
-    <input type="button" value="Set nagative" data-bind="click: setNegativeProfit" />
+    <div data-bind="css: profitStatus">Profit information: <strong data-bind="text: currentProfit"></strong></div>
+    <input type="button" value="Toggle" data-bind="click: toggleProfitValue" />
 </body>
 </html>

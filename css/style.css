@@ -18,5 +18,8 @@
   display: inline-block;
 }
 .profitWarning {
-  color: lightgreen;
+  color: red;
+}
+.profitPositive {
+  color: blue;
 }
