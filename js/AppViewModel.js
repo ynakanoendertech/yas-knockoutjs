@@ -17,7 +17,7 @@ define(['ko'], function(ko) {
             test3 = ko.observable("three");
 
         // A computed internally ask to start tracking dependencies and receive a notification when anything observable is accessed
-        // Add a callback for all observable/computed accesses.
+        // Add a callback for all observable/computed accesses in ORIGINAL context
         ko.dependencyDetection.begin({
             callback: function(subscribable, internalId) {
                 console.dir(subscribable);
@@ -26,12 +26,14 @@ define(['ko'], function(ko) {
         });
 
         // Any read to an observable or computed triggers a call to the dependency tracker
+        // - The callback will be provided from ORIGINAL context
         test();
         // Output:
         //   original context: 1 was accessed
 
             console.log('-------------------');
             // Start another dependency detection inside of the current one
+            // Add a callback for all observable/computed accesses in CHILD context
             ko.dependencyDetection.begin({
                 callback: function(subscribable, internalId) {
                     console.dir(subscribable);
@@ -40,6 +42,7 @@ define(['ko'], function(ko) {
             });
 
             // Inside of child context, access test and also test 2
+            // - The callback will be provided from CHILD context
             test();
             test2();
             // Output:
@@ -52,6 +55,7 @@ define(['ko'], function(ko) {
 
 
         // Dependencies are back to the original (outer) context
+        // - The callback will be provided from ORIGINAL context
         test3();
         // Output:
         //   original context: 3 was accessed
