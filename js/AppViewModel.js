@@ -16,11 +16,17 @@ define(['ko'], function(ko) {
             test2 = ko.observable("two"),
             test3 = ko.observable("three");
 
+        console.dir(ko.dependencyDetection);
         // A computed internally ask to start tracking dependencies and receive a notification when anything observable is accessed
+        // Add a callback for all observable/computed accesses.
         ko.dependencyDetection.begin({
             callback: function(subscribable, internalId) {
+                console.dir(subscribable);
                 console.log("original context: " + internalId + " was accessed");
             }
         });
+
+        // Any read to an observable or computed triggers a call to the dependency tracker
+        test();
     };
 });
