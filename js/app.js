@@ -1,10 +1,10 @@
 "use strict";
 
-require(['jquery', 'ko', 'WebmailViewModel'], function($, ko, WebmailViewModel) {
+require(['jquery', 'ko', 'AppViewModel'], function($, ko, AppViewModel) {
 
     $(document).ready(function() {
 
         // Activate
-        ko.applyBindings(new WebmailViewModel());
+        ko.applyBindings(new AppViewModel());
     });
 });

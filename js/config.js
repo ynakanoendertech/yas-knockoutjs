@@ -5,6 +5,6 @@ requirejs.config({
     paths: {
         jquery: 'node_modules/jquery/dist/jquery',
         ko: 'node_modules/knockout/build/output/knockout-latest',
-        WebmailViewModel: "js/WebmailViewModel"
+        AppViewModel: "js/AppViewModel"
     }
 });
