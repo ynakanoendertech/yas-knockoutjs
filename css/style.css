@@ -14,3 +14,9 @@
 .folders li.selected {
   background-color: rgba(255, 140, 0, 0.5);
 }
+.folders {
+  display: inline-block;
+}
+.profitWarning {
+  color: lightgreen;
+}

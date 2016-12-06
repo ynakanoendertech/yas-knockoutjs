@@ -14,5 +14,11 @@ define(['ko'], function(ko) {
         self.goToFolder = function(folder) {
           self.chosenFolderId(folder);
         };
+
+        // CSS binding
+        self.currentProfit = ko.observable(150000);
+        self.setNegativeProfit = function() {
+            self.currentProfit(-50);
+        };
     };
 });

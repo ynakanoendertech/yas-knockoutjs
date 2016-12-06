@@ -26,5 +26,10 @@
             click: $root.goToFolder
         "></li>
     </ul>
+
+    <hr>
+
+    <div data-bind="css: { profitWarning: currentProfit() < 0 }">Profit information</div>
+    <input type="button" value="Set nagative" data-bind="click: setNegativeProfit" />
 </body>
 </html>
