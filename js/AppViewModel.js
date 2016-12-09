@@ -12,6 +12,9 @@ define(['ko'], function(ko) {
         console.log("The persons's new name is " + newValue);
     });
 
+    // Use extend to notify always
+    AppViewModel.personName.extend({ notify: 'always' });
+
     setTimeout(function() {
         console.log('updated');
         AppViewModel.personName('Updated').personAge(30);
