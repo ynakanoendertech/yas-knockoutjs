@@ -17,11 +17,11 @@
 <body>
     <div class="test">Test</div>
 
-    <form data-bind="submit: getTweets">
+    <!-- ko submit: getTweets -->
         Twitter account:
         <input data-bind="value: twitterName" />
         <button type="submit">Get tweets</button>
-    </form>
+    <!--/ko-->
 
     <!--ko with: resultData -->
         <h3>Recent tweets fetched at <span data-bind="text: retrievalDate"></span></h3>
