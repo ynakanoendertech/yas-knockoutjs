@@ -16,5 +16,12 @@
 </head>
 <body>
     <div class="test">Test</div>
+
+    <h1 data-bind="text: city"></h1>
+    <div data-bind="with: coords">
+        <div>Latitude: <strong data-bind="text: latitude"></strong></div>
+        <div>Longitude: <strong data-bind="text: longitude"></strong></div>
+    </div>
+
 </body>
 </html>
