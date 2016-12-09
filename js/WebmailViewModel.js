@@ -12,7 +12,7 @@ define(['ko'], function(ko) {
 
         // Behaviors
         self.goToFolder = function(folder) {
-          self.chosenFolderId(folder);
+            self.chosenFolderId(folder);
         };
     };
 });
