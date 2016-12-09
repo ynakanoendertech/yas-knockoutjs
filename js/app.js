@@ -1,8 +1,10 @@
 "use strict";
 
-require(['jquery'], function($) {
+require(['jquery', 'ko', 'AppViewModel'], function($, ko, AppViewModel) {
 
     $(document).ready(function() {
-        console.log('app.js');
+
+        // Activate
+        ko.applyBindings(new AppViewModel());
     });
 });
