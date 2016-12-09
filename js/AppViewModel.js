@@ -21,6 +21,5 @@ define(['ko'], function(ko) {
         self.fullName = ko.computed(function() {
             return self.firstName() + " " + self.lastName();
         });
-
     };
 });
