@@ -2,21 +2,23 @@ define(['ko'], function(ko) {
     "use strict";
 
     // View model
-    return function AppViewModel(items) {
-
-        // Preserve this
-        var self = this;
-
-        // Instalnce properties
-        self.itemToAdd = ko.observable("");  // init with ""
-        self.myItems = ko.observableArray(items);
-
-        // Instance methods
-        self.addItem = function() {
-            if (self.itemToAdd() != "") {
-                self.myItems.push(self.itemToAdd());
-                self.itemToAdd("");  // reset with ""
-            }
-        };
+    var AppViewModel = {
+        personName: ko.observable('Bob'),
+        personAge: ko.observable(20),
     };
+
+    // Subscribe to value change on personName
+    var subscription = AppViewModel.personName.subscribe(function(newValue) {
+        console.log("The persons's new name is " + newValue);
+    });
+
+    // Use extend to notify always
+    AppViewModel.personName.extend({ notify: 'always' });
+
+    setTimeout(function() {
+        console.log('updated');
+        AppViewModel.personName('Updated').personAge(30);
+        subscription.dispose();  // Terminate a subscription
+    }, 3000);
+    return AppViewModel;
 });

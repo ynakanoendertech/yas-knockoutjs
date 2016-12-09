@@ -17,15 +17,7 @@
 <body>
     <div class="test">Test</div>
 
-    <div>
-        Total # of fruits: <strong data-bind="text: myItems().length"></strong>
-    </div>
-    <ol data-bind="foreach: myItems">
-        <li data-bind="text: $data"></li>
-    </ol>
-    <div>
-        <div><input type="text" data-bind="value: itemToAdd" /></div>
-        <div><button data-bind="click: addItem, enable: myItems().length < 5">Add item</button></div>
-    </div>
+    <div>The name is <span data-bind="text: personName"></span></div>
+    <div>The age is <span data-bind="text: personAge"></span></div>
 </body>
 </html>
