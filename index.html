@@ -16,5 +16,16 @@
 </head>
 <body>
     <div class="test">Test</div>
+
+    <div>
+        Total # of fruits: <strong data-bind="text: myItems().length"></strong>
+    </div>
+    <ol data-bind="foreach: myItems">
+        <li data-bind="text: $data"></li>
+    </ol>
+    <div>
+        <div><input type="text" data-bind="value: itemToAdd" /></div>
+        <div><button data-bind="click: addItem, enable: myItems().length < 5">Add item</button></div>
+    </div>
 </body>
 </html>
