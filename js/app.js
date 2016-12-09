@@ -1,10 +1,10 @@
 "use strict";
 
-require(['jquery', 'ko', 'ReservationsViewModel'], function($, ko, ReservationsViewModel) {
+require(['jquery', 'ko', 'AppViewModel'], function($, ko, AppViewModel) {
 
     $(document).ready(function() {
 
         // Activate
-        ko.applyBindings(new ReservationsViewModel());
+        ko.applyBindings(new AppViewModel());
     });
 });
