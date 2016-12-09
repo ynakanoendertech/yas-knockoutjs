@@ -2,23 +2,17 @@ define(['ko'], function(ko) {
     "use strict";
 
     // View model
-    var AppViewModel = {
-        personName: ko.observable('Bob'),
-        personAge: ko.observable(20),
-    };
+    function AppViewModel() {
 
-    // Subscribe to value change on personName
-    var subscription = AppViewModel.personName.subscribe(function(newValue) {
-        console.log("The persons's new name is " + newValue);
-    });
+        // Preserve this
+        var self = this;
 
-    // Use extend to notify always
-    AppViewModel.personName.extend({ notify: 'always' });
+        self.petList = ko.observableArray([
+            { name: "Bungle", type: "Bear" },
+            { name: "George", type: "Hippo" },
+            { name: "Zippy", type: "Unknown" }
+        ]);
+    }
 
-    setTimeout(function() {
-        console.log('updated');
-        AppViewModel.personName('Updated').personAge(30);
-        subscription.dispose();  // Terminate a subscription
-    }, 3000);
     return AppViewModel;
 });
