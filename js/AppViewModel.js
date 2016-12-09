@@ -7,11 +7,14 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.petList = ko.observableArray([
-            { name: "Bungle", type: "Bear" },
-            { name: "George", type: "Hippo" },
-            { name: "Zippy", type: "Unknown" }
-        ]);
+        // Instance properties
+        self.firstName = ko.observable("Bob");
+        self.lastName = ko.observable("Smith");
+
+        // Instance methods
+        self.fullName = ko.computed(function() {
+            return self.firstName() + " " + self.lastName();
+        });
     }
 
     return AppViewModel;
