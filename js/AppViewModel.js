@@ -14,12 +14,13 @@ define(['ko'], function(ko) {
 
         // Instance methods
 
-        self.fullNameWrong = ko.computed(function() {
+        self.fullName = ko.pureComputed(function() {
+            return self.firstName() + " " + self.lastName();
+        });
+
+        self.fullNameWrong = ko.pureComputed(function() {
             return self.firstName + " " + self.lastName;
         });
 
-        self.fullName = ko.computed(function() {
-            return self.firstName() + " " + self.lastName();
-        });
     };
 });
