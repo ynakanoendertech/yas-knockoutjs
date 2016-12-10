@@ -17,8 +17,9 @@
 <body>
     <div class="test">Test</div>
 
-    <div>Enter bid price: <input data-bind="textInput: formattedPrice" /></div>
-    <div>(Raw value: <strong data-bind="text: price"></strong>)</div>
+    <div>Endter a numeric value: <input data-bind="textInput: attemptedValue" /></div>
+    <div class="error" data-bind="visible: !lastInputWasValid()">That's not a number!</div>
+    <div>(Accepted value: <strong data-bind="text: acceptedNumericValue"></strong>)</div>
 
 </body>
 </html>
