@@ -7,21 +7,15 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.produce = [ 'Apple', 'Banana', 'Celery', 'Corn', 'Orange', 'Spinach' ];
+        self.price = ko.observable(25.99);
 
-        self.selectedProduce = ko.observableArray([ 'Corn', 'Orange' ]);
-        self.selectedProduce.subscribe(function(newValue) {
-            console.log("  The new value is [" + newValue + "]");
-        });
-
-        self.selectedAllProduce = ko.pureComputed({
+        self.formattedPrice = ko.pureComputed({
             read: function() {
-                console.log('read');
-                return self.selectedProduce().length === self.produce.length;
+                return '$' + self.price().toFixed(2);
             },
             write: function(value) {
-                console.log('write');
-                self.selectedProduce(value ? self.produce.slice(0) : []);
+                value = parseFloat(value.replace(/[^\.\d]/g, ""));
+                self.price(isNaN(value) ? 0 : value);
             },
             owner: self
         });
