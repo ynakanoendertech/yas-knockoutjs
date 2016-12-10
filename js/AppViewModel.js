@@ -7,22 +7,17 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.acceptedNumericValue = ko.observable(123);
-        self.lastInputWasValid = ko.observable(true);
+        self.shouldShowMessage = ko.observable(true);
 
-        self.attemptedValue = ko.pureComputed({
-            read: self.acceptedNumericValue,
-            write: function(value) {
-                if (isNaN(value)) {
-                    self.lastInputWasValid(false);
-                } else {
-                    self.lastInputWasValid(true);
-                    self.acceptedNumericValue(value);
-                }
-            },
-            owner: self
-        });
+        setTimeout(function() {
+            console.log(false);
+            self.shouldShowMessage(false);
+        }, 3000);
 
+        setTimeout(function() {
+            console.log(true);
+            self.shouldShowMessage(true);
+        }, 6000);
     }
 
     return AppViewModel;
