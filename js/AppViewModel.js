@@ -7,24 +7,25 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        // Instance properties
-        self.firstName = ko.observable("Bob");
-        self.lastName = ko.observable("Smith");
+        self.produce = [ 'Apple', 'Banana', 'Celery', 'Corn', 'Orange', 'Spinach' ];
 
-        // Instance methods
-        self.fullName = ko.pureComputed({
+        self.selectedProduce = ko.observableArray([ 'Corn', 'Orange' ]);
+        self.selectedProduce.subscribe(function(newValue) {
+            console.log("  The new value is [" + newValue + "]");
+        });
+
+        self.selectedAllProduce = ko.pureComputed({
             read: function() {
-                return self.firstName() + " " + self.lastName();
+                console.log('read');
+                return self.selectedProduce().length === self.produce.length;
             },
             write: function(value) {
-                var lastSpacePos = value.lastIndexOf(" ");
-                if (lastSpacePos > 0) {
-                    this.firstName(value.substring(0, lastSpacePos));
-                    this.lastName(value.substring(lastSpacePos + 1));
-                }
+                console.log('write');
+                self.selectedProduce(value ? self.produce.slice(0) : []);
             },
             owner: self
         });
+
     }
 
     return AppViewModel;

@@ -17,15 +17,16 @@
 <body>
     <div class="test">Test</div>
 
-    <div>
-        First name: <strong data-bind="text: firstName"></strong>
+    <div class="heading">
+        <input type="checkbox" data-bind="checked: selectedAllProduce" title="Select all/none"/>
+        Produce
     </div>
-    <div>
-        Last name: <strong data-bind="text: lastName"></strong>
+    <hr>
+    <div data-bind="foreach: produce">
+        <div>
+            <input type="checkbox" data-bind="checkedValue: $data, checked: $parent.selectedProduce"/>
+            <span data-bind="text: $data"></span>
+        </div>
     </div>
-    <div>
-        Hello, <input data-bind="textInput: fullName" />
-    </div>
-
 </body>
 </html>
