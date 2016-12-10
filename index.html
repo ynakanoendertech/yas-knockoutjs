@@ -17,18 +17,9 @@
 <body>
     <div class="test">Test</div>
 
-    <!--ko text: 'The length of the array is ' + petList().length --><!--/ko-->
-    <br>
-    <!--ko if: petList().length > 0 -->
-        <!--ko text: 'The first element is ' + petList()[0].name --><!--/ko-->
-    <!--/ko-->
-    <br>
-    <br>
-    <!--ko foreach: petList -->
-      <!--ko text: name --><!--/ko-->
-      :
-      <!--ko text: type --><!--/ko-->
-      <br>
-    <!--/ko-->
+    <div>Endter a numeric value: <input data-bind="textInput: attemptedValue" /></div>
+    <div class="error" data-bind="visible: !lastInputWasValid()">That's not a number!</div>
+    <div>(Accepted value: <strong data-bind="text: acceptedNumericValue"></strong>)</div>
+
 </body>
 </html>

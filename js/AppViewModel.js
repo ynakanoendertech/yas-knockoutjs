@@ -7,11 +7,22 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.petList = ko.observableArray([
-            { name: "Bungle", type: "Bear" },
-            { name: "George", type: "Hippo" },
-            { name: "Zippy", type: "Unknown" }
-        ]);
+        self.acceptedNumericValue = ko.observable(123);
+        self.lastInputWasValid = ko.observable(true);
+
+        self.attemptedValue = ko.pureComputed({
+            read: self.acceptedNumericValue,
+            write: function(value) {
+                if (isNaN(value)) {
+                    self.lastInputWasValid(false);
+                } else {
+                    self.lastInputWasValid(true);
+                    self.acceptedNumericValue(value);
+                }
+            },
+            owner: self
+        });
+
     }
 
     return AppViewModel;
