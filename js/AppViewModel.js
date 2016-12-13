@@ -3,11 +3,9 @@ define(['ko'], function(ko) {
 
     // View model
     var AppViewModel = {
-        price: ko.observable(24.95)
+        myMessage: ko.observable("<i>Hello</i>"),
+        myHtml: ko.observable("<i>Hello</i>")
     };
-    AppViewModel.priceRating = ko.pureComputed(function() {
-        return this.price > 50 ? "expensive" : "affordable";
-    }, AppViewModel);
 
     return AppViewModel;
 });
