@@ -25,11 +25,11 @@
 <body>
     <div class="test">Test</div>
 
-    <form data-bind="submit: doSomething" action="form-submitted.html">
+    <form id="myForm1" data-bind="submit: doSomething" action="form-submitted.html">
         <button type="submit">Submit (KO prevents defult form action)</button>
     </form>
 
-    <form data-bind="submit: doSomething2" action="form-submitted.html">
+    <form id="myForm2" data-bind="submit: doSomething2" action="form-submitted.html">
         <button type="submit">Submit (handler returns true)</button>
     </form>
 

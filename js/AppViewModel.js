@@ -5,11 +5,20 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.doSomething = function() {
+        // Private function
+        function showFormId(formElement) {
+            if (formElement.length && formElement.id) {
+                console.dir(formElement.id);
+            }
+        }
+
+        self.doSomething = function(formElement) {
+            showFormId(formElement);
             console.log('something');
         };
 
-        self.doSomething2 = function() {
+        self.doSomething2 = function(formElement) {
+            showFormId(formElement);
             console.log('something 2');
             return true;
         };
