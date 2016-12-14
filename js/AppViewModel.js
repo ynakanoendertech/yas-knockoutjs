@@ -7,12 +7,12 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.myFunction = function(data, event) {
-            if (event.shiftKey) {
-                console.log('Shift key pressed');
-            } else {
-                console.log('normal click');
-            }
+        self.myDivHandler = function() {
+            console.log('outer div clicked');
+        };
+
+        self.myButtonHandler = function() {
+            console.log('inner button clicked');
         };
     }
 

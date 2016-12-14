@@ -13,11 +13,23 @@
             });
         });
     </script>
+    <style>
+        .outer {
+            border: 1px solid red;
+            padding: 15px;
+        }
+        .inner {
+            border: 1px solid lightblue;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
     <div class="test">Test</div>
 
-    <button data-bind="click: myFunction">Click me</button>
+    <div class="outer" data-bind="click: myDivHandler">
+        <button class="inner" data-bind="click: myButtonHandler, clickBubble: false">Click me</button>
+    </div>
 
 </body>
 </html>
