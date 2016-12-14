@@ -17,5 +17,11 @@
 <body>
     <div class="test">Test</div>
 
+    <ul data-bind="foreach: people">
+        <li>
+            <!--ko text: $data.firstName + " " + $data.lastName --><!--/ko-->
+        </li>
+    </ul>
+
 </body>
 </html>

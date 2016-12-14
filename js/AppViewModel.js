@@ -4,6 +4,14 @@ define(['ko'], function(ko) {
     // View model
     function AppViewModel() {
 
+        // Preserve this
+        var self = this;
+
+        this.people = [
+            { firstName: 'Bert', lastName: 'Bertington' },
+            { firstName: 'Charles', lastName: 'Charlesforth' },
+            { firstName: 'Denise', lastName: 'Dentiste' }
+        ];
     }
 
     return AppViewModel;
