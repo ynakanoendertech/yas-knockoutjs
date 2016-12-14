@@ -18,11 +18,15 @@
     <div class="test">Test</div>
 
     <div>
-        Login name: <input data-bind="value: userName" />
+        Select a country:
+        <select data-bind="
+            options: countries,
+            optionsCaption: 'Choose one...',
+            value: selectedCountry,
+            valueAllowUnset: false
+        "></select>
     </div>
-    <div>
-        Password: <input type="password" data-bind="value: userPassword, valueUpdate: 'input'" />
-    </div>
+    <div data-bind="text: selectedCountry"></div>
 
 </body>
 </html>
