@@ -4,8 +4,9 @@ require(['jquery', 'ko', 'AppViewModel'], function($, ko, AppViewModel) {
 
     $(document).ready(function() {
 
-        ko.components.register('special-offer', {
-            template: '<div class="offer-box" data-bind="text: productName"></div>'
+        ko.components.register('your-component-name', {
+            viewModel: AppViewModel,
+            template: 'some template'
         });
 
         // Activate
