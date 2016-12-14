@@ -13,19 +13,30 @@
             });
         });
     </script>
+    <style>
+        .outer {
+            display: inline-block;
+            border: 1px solid lightblue;
+            padding: 30px;
+        }
+        .inner {
+            display: inline-block;
+            border: 1px solid lightgreen;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="test">Test</div>
 
-    <ul data-bind="foreach: places">
-        <li data-bind="
-            text: $data,
-            event: {
-                mouseover: $parent.logMouseOver
-            }
-        "></li>
-    </ul>
-    <p>You seem to be interested in : <span data-bind="text: lastInterest"></span></p>
+    <div class="outer" data-bind="
+        event: { mouseover: outerHandler }
+    ">
+        <div class="inner" data-bind="
+            event: { mouseover: innerHandler },
+            mouseoverBubble: false
+        ">Mouse hover me</div>
+    </div>
 
 </body>
 </html>

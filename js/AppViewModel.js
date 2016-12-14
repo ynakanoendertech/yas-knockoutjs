@@ -7,11 +7,8 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.lastInterest = ko.observable();
-        self.places = ko.observableArray(['London', 'Paris', 'Tokyo']);
-        self.logMouseOver = function(place) {
-            self.lastInterest(place);
-        };
+        self.outerHandler = function() { console.log('outer') };
+        self.innerHandler = function() { console.log('inner') };
 
     }
 
