@@ -7,11 +7,10 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.numberOfClicks = ko.observable(0);
+        self.places = ko.observableArray(['London', 'Paris', 'Tokyo']);
 
-        self.incrementClickCounter = function() {
-            var previousCount = self.numberOfClicks();
-            self.numberOfClicks(previousCount + 1);
+        self.removePlace = function(place) {
+            self.places.remove(place);
         };
     }
 

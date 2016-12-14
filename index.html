@@ -13,21 +13,16 @@
             });
         });
     </script>
-    <style>
-        .click-me {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: 1px solid #cecece;
-            background-color: #f4f4f4;
-        }
-    </style>
 </head>
 <body>
     <div class="test">Test</div>
 
-    <div>You've clicked <strong data-bind="text: numberOfClicks"></strong> times.</div>
-    <div class="click-me" data-bind="click: incrementClickCounter">Click me</div>
+    <ul data-bind="foreach: places">
+        <li>
+            <span data-bind="text: $data"></span>
+            <button data-bind="click: $parent.removePlace">Remove</button>
+        </li>
+    </ul>
 
 </body>
 </html>
