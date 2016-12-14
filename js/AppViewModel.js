@@ -7,10 +7,12 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.places = ko.observableArray(['London', 'Paris', 'Tokyo']);
-
-        self.removePlace = function(place) {
-            self.places.remove(place);
+        self.myFunction = function(data, event) {
+            if (event.shiftKey) {
+                console.log('Shift key pressed');
+            } else {
+                console.log('normal click');
+            }
         };
     }
 
