@@ -7,7 +7,10 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.displayMessage = ko.observable(false);
+        self.planets = [
+            { name: 'Mercury', capital: null },
+            { name: 'Earth', capital: { cityName: 'Barnsley' } }
+        ];
 
     }
 
