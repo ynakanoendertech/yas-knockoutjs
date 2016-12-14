@@ -17,11 +17,13 @@
 <body>
     <div class="test">Test</div>
 
-    <ul>
-        <li class="header">Header item</li>
-        <!--ko foreach: myItems -->
-            <li><span data-bind="text: $data"></span></li>
-        <!--/ko-->
+    <button data-bind="click: addItem">Add</button>
+    <ul data-bind="foreach: {
+        data: myItems,
+        as: 'item',
+        afterAdd: yellowFadeIn
+    }">
+        <li data-bind="text: item"></li>
     </ul>
 
 </body>
