@@ -17,16 +17,25 @@
 <body>
     <div class="test">Test</div>
 
+    <h4>2-way binding</h4>
     <div>
-        Select a country:
-        <select data-bind="
-            options: countries,
-            optionsCaption: 'Choose one...',
-            value: selectedCountry,
-            valueAllowUnset: true
-        "></select>
+        First value: <input data-bind="value: firstValue" />
     </div>
-    <div data-bind="text: selectedCountry"></div>
+
+    <h4>1-way binding, syncs only from textbox to model</h4>
+    <div>
+        Second value: <input data-bind="value: secondValue" />
+    </div>
+
+    <h4>No binding, doesn't react to any changes</h4>
+    <div>
+        Third value: <input data-bind="value: secondValue.length > 8" />
+    </div>
+
+    <br>
+    <div>
+        <button data-bind="click: showValues">Show values</button>
+    </div>
 
 </body>
 </html>

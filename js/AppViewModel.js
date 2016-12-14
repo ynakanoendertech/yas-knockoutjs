@@ -5,13 +5,13 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.countries = ['Japan', 'Bolivia', 'New Zealand'];
-        self.selectedCountry = ko.observable('Latvia');
+        self.firstValue = ko.observable("hello");
+        self.secondValue = "hello, again";
 
-        // Subscribe function to output value changes
-        self.selectedCountry.subscribe(function(value) {
-            console.log(value);
-        });
+        self.showValues = function() {
+            console.log('First value : ' + self.firstValue());
+            console.log('Second value: ' + self.secondValue);
+        };
     }
 
     return AppViewModel;
