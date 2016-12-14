@@ -17,16 +17,15 @@
 <body>
     <div class="test">Test</div>
 
-    <div data-bind="event: {
-        mouseover: enableDetails,
-        mouseout: disableDetails
-    }">
-        Mouse over me
-    </div>
-
-    <div data-bind="visible: detailsEnabled">
-        Details
-    </div>
+    <ul data-bind="foreach: places">
+        <li data-bind="
+            text: $data,
+            event: {
+                mouseover: $parent.logMouseOver
+            }
+        "></li>
+    </ul>
+    <p>You seem to be interested in : <span data-bind="text: lastInterest"></span></p>
 
 </body>
 </html>

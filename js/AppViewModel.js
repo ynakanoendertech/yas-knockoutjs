@@ -7,13 +7,12 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        self.detailsEnabled = ko.observable(false);
-        self.enableDetails = function() {
-            self.detailsEnabled(true);
+        self.lastInterest = ko.observable();
+        self.places = ko.observableArray(['London', 'Paris', 'Tokyo']);
+        self.logMouseOver = function(place) {
+            self.lastInterest(place);
         };
-        self.disableDetails = function() {
-            self.detailsEnabled(false);
-        };
+
     }
 
     return AppViewModel;
