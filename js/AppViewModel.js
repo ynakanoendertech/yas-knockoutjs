@@ -3,10 +3,7 @@ define(['ko'], function(ko) {
 
     // View model
     function AppViewModel() {
-        var self = this;
-
-        self.hasCellphone = ko.observable(false);
-        self.cellphoneNumber = "";
+        
     }
 
     return AppViewModel;
