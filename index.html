@@ -17,5 +17,16 @@
 <body>
     <div class="test">Test</div>
 
+    <div data-bind="event: {
+        mouseover: enableDetails,
+        mouseout: disableDetails
+    }">
+        Mouse over me
+    </div>
+
+    <div data-bind="visible: detailsEnabled">
+        Details
+    </div>
+
 </body>
 </html>

@@ -4,6 +4,16 @@ define(['ko'], function(ko) {
     // View model
     function AppViewModel() {
 
+        // Preserve this
+        var self = this;
+
+        self.detailsEnabled = ko.observable(false);
+        self.enableDetails = function() {
+            self.detailsEnabled(true);
+        };
+        self.disableDetails = function() {
+            self.detailsEnabled(false);
+        };
     }
 
     return AppViewModel;
