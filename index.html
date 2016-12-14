@@ -17,5 +17,18 @@
 <body>
     <div class="test">Test</div>
 
+    <div>
+        <input type="checkbox" data-bind="checked: hasCellphone" />
+        I have a cellphone
+    </div>
+
+    <div>
+        Your cellphone number:
+        <input type="text" data-bind="
+            value: cellphoneNumber,
+            enable: hasCellphone
+        " />
+    </div>
+
 </body>
 </html>
