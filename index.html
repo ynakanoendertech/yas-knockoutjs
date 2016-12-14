@@ -17,20 +17,5 @@
 <body>
     <div class="test">Test</div>
 
-    <button data-bind="click: addItem">Add</button>
-    <ul data-bind="foreach: {
-        data: myItems,
-        as: 'item',
-        afterAdd: yellowFadeIn,
-        afterRender: afterRender
-    }">
-        <li>
-            <!--ko text: $index --><!--/ko-->
-            -
-            <strong data-bind="text: item"></strong>
-            <button data-bind="click: $parent.removeItem">Remove</button>
-        </li>
-    </ul>
-
 </body>
 </html>
