@@ -20,9 +20,9 @@
     <ul data-bind="foreach: planets">
         <li>
             Planet: <b data-bind="text: name"></b>
-            <span data-bind="if: capital">
+            <!--ko if: capital -->
                 - Capital: <b data-bind="text: capital.cityName"></b>
-            </span>
+            <!--/ko-->
         </li>
     </ul>
 
