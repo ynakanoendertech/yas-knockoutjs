@@ -5,9 +5,13 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.isSelected = ko.observable(false);
-        self.setIsSelected = function() {
-            this.isSelected(true);
+        // Data
+        self.name = ko.observable("Bert Bertington");
+        self.editing = ko.observable(false);
+
+        // Behaviors
+        self.edit = function() {
+            self.editing(true);
         };
     }
 

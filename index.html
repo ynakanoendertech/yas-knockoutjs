@@ -18,9 +18,11 @@
     <div class="test">Test</div>
 
     <div>
-        <input data-bind="hasFocus: isSelected" />
-        <button data-bind="click: setIsSelected">Focus programmatically</button>
-        <span data-bind="visible: isSelected">The textbox has focus</span>
+        Name: <b data-bind="visible: !editing(), text: name, click: edit">&nbsp;</b>
+        <input data-bind="visible: editing, value: name, hasFocus: editing" />
+    </div>
+    <div>
+        <em>Click the name to edit it; click elsewhere to apply changes.</em>
     </div>
 
 </body>
