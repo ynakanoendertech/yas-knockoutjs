@@ -4,6 +4,11 @@ define(['ko'], function(ko) {
     // View model
     function AppViewModel() {
 
+        // Preserve this
+        var self = this;
+
+        self.displayMessage = ko.observable(false);
+
     }
 
     return AppViewModel;

@@ -17,5 +17,11 @@
 <body>
     <div class="test">Test</div>
 
+    <label>
+        <input type="checkbox" data-bind="checked: displayMessage" />
+        Display message
+    </label>
+
+    <div data-bind="if: displayMessage, css: { active: displayMessage }">This is the message.</div>
 </body>
 </html>
