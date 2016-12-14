@@ -4,12 +4,6 @@ define(['ko'], function(ko) {
     // View model
     function AppViewModel() {
 
-        // Preserve this
-        var self = this;
-
-        self.outerHandler = function() { console.log('outer') };
-        self.innerHandler = function() { console.log('inner') };
-
     }
 
     return AppViewModel;
