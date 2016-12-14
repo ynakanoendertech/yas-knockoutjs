@@ -3,7 +3,7 @@ define(['ko'], function(ko) {
 
     // View model
     function AppViewModel() {
-        
+
     }
 
     return AppViewModel;
