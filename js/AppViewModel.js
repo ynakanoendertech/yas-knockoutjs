@@ -3,10 +3,7 @@ define(['ko'], function(ko) {
 
     // View model
     function AppViewModel() {
-        var self = this;
 
-        self.userName = ko.observable("");
-        self.userPassword = ko.observable("abc");
     }
 
     return AppViewModel;
