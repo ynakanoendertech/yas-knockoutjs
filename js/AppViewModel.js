@@ -7,11 +7,19 @@ define(['ko'], function(ko) {
         // Preserve this
         var self = this;
 
-        this.people = [
-            { firstName: 'Bert', lastName: 'Bertington' },
-            { firstName: 'Charles', lastName: 'Charlesforth' },
-            { firstName: 'Denise', lastName: 'Dentiste' }
-        ];
+        this.people = ko.observableArray([
+            { name: 'Bert' },
+            { name: 'Charles' },
+            { name: 'Denise' }
+        ]);
+
+        this.addPerson = function() {
+            self.people.push({ name: "New at " + new Date() });
+        };
+
+        this.removePerson = function() {
+            self.people.remove(this);
+        };
     }
 
     return AppViewModel;
