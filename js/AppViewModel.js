@@ -5,7 +5,8 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.myValue = ko.observable('abc');
+        self.userName = ko.observable("");
+        self.userPassword = ko.observable("abc");
     }
 
     return AppViewModel;
