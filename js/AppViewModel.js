@@ -4,14 +4,6 @@ define(['ko'], function(ko) {
     // View model
     function AppViewModel() {
 
-        // Preserve this
-        var self = this;
-
-        self.planets = [
-            { name: 'Mercury', capital: null },
-            { name: 'Earth', capital: { cityName: 'Barnsley' } }
-        ];
-
     }
 
     return AppViewModel;
