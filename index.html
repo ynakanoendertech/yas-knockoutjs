@@ -21,9 +21,15 @@
     <ul data-bind="foreach: {
         data: myItems,
         as: 'item',
-        afterAdd: yellowFadeIn
+        afterAdd: yellowFadeIn,
+        afterRender: afterRender
     }">
-        <li data-bind="text: item"></li>
+        <li>
+            <!--ko text: $index --><!--/ko-->
+            -
+            <strong data-bind="text: item"></strong>
+            <button data-bind="click: $parent.removeItem">Remove</button>
+        </li>
     </ul>
 
 </body>
