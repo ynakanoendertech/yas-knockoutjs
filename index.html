@@ -17,5 +17,13 @@
 <body>
     <div class="test">Test</div>
 
+    <div>
+        Choose some countries you'd like to visit:
+        <select size="5" multiple="true" data-bind="
+            options: availableCountries,
+            selectedOptions: chosenCountries
+        "></select>
+    </div>
+
 </body>
 </html>
