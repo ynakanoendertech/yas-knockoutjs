@@ -17,5 +17,22 @@
 <body>
     <div class="test">Test</div>
 
+    <!-- ko foreach: items -->
+        <input type="checkbox" data-bind="
+            checkedValue: $data,
+            checked: $root.chosenItems
+        " />
+        <span data-bind="text: itemName"></span>
+    <!-- /ko -->
+
+    <br>
+    <br>
+    <div>
+        Chosen items:
+        <ul data-bind="foreach: chosenItems">
+            <li data-bind="text: $data.itemName"></li>
+        </ul>
+    </div>
+
 </body>
 </html>
