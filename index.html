@@ -17,12 +17,34 @@
 <body>
     <div class="test">Test</div>
 
-    <h2>Participants:</h2>
-    Here are the participants:
-    <div data-bind="foreach: people">
-        <h3 data-bind="text: name"></h3>
-        <p>Credits: <span data-bind="text: credits"></span></p>
-    </div>
+    <ul data-bind="
+        template: {
+            name: 'seasonTemplate',
+            foreach: seasons,
+            as: 'season'
+        }
+    "></ul>
+
+    <script type="text/html" id="seasonTemplate">
+        <li>
+            <strong data-bind="text: name"></strong>
+            <ul data-bind="
+                template: {
+                    name: 'monthTemplate',
+                    foreach: months,
+                    as: 'month'
+                }
+            "></ul>
+        </li>
+    </script>
+
+    <script type="text/html" id="monthTemplate">
+        <li>
+            <span data-bind="text: month"></span>
+            is in
+            <span data-bind="text: season.name"></span>
+        </li>
+    </script>
 
 </body>
 </html>

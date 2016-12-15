@@ -5,10 +5,12 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.people = [
-            { name: 'Franklin', credits: 250 },
-            { name: 'Mario', credits: 5800 }
-        ];
+        self.seasons = ko.observableArray([
+            { name: 'Spring', months: [ 'March', 'April', 'May' ] },
+            { name: 'Summer', months: [ 'June', 'July', 'August' ] },
+            { name: 'Autumn', months: [ 'September', 'October', 'November' ] },
+            { name: 'Winter', months: [ 'December', 'January', 'February' ] }
+        ]);
     }
 
     return AppViewModel;
