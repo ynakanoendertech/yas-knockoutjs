@@ -19,17 +19,10 @@
 
     <h2>Participants:</h2>
     Here are the participants:
-    <div data-bind="
-        template: {
-            name: 'person-template',
-            foreach: people
-        }
-    "></div>
-
-    <script type="text/html" id="person-template">
+    <div data-bind="foreach: people">
         <h3 data-bind="text: name"></h3>
         <p>Credits: <span data-bind="text: credits"></span></p>
-    </script>
+    </div>
 
 </body>
 </html>
