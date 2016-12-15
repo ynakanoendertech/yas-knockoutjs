@@ -3,7 +3,9 @@ define(['ko'], function(ko) {
 
     // View model
     function AppViewModel() {
+        var self = this;
 
+        self.someModelProperty = ko.observable("");
     }
 
     return AppViewModel;
