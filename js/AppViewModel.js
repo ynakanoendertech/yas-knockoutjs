@@ -6,11 +6,11 @@ define(['ko'], function(ko) {
         var self = this;
 
         self.wantsSpam = ko.observable(true);
-        self.spamFlavors = ko.observableArray(['cherry', 'almond']);
+        self.spamFlavors = ko.observable("almond");
 
         setTimeout(function() {
             console.log('change values');
-            self.spamFlavors.push('msg');
+            self.spamFlavors('msg');
         }, 3000);
     }
 
