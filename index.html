@@ -13,36 +13,9 @@
             });
         });
     </script>
-    <style>
-        .template.active {
-            color: #0078ce;
-        }
-        .template.inactive {
-            color: #ee3700;
-        }
-    </style>
 </head>
 <body>
     <div class="test">Test</div>
-
-    <ul data-bind="
-        template: {
-            name: displayMode,
-            foreach: employees
-        }
-    "></ul>
-
-    <script type="text/html" id="active">
-        <div class="template active">
-            <span data-bind="text: name"></span>: <strong>active</strong>
-        </div>
-    </script>
-
-    <script type="text/html" id="inactive">
-        <div class="template inactive">
-            <span data-bind="text: name"></span>: <strong>inactive</strong>
-        </div>
-    </script>
 
 </body>
 </html>
