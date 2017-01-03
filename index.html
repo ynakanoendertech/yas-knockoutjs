@@ -17,31 +17,12 @@
 <body>
     <div class="test">Test</div>
 
-    <!-- variable -->
-    <div data-bind="visible: shouldShowMessage">This is visible.</div>
-
-    <!-- comparison and conditional -->
-    <div>
-        The item is <span data-bind="text: price() > 50 ? 'expensive' : 'cheap'"></span>.
-    </div>
-
-    <!-- function call and comparison -->
-    <div>
-        <span data-bind="text: cellphoneNumber"></span>
-        <button data-bind="enable: parseAreaCode(cellphoneNumber()) == '555'">Area code 555</button>
-    </div>
-
-    <!-- function expression -->
-    <div>
-        <span data-bind="text: myFunctionValue"></span>
-        <button data-bind="click: function(data) { myFunction('param1', data) }">Click here</button>
-    </div>
-
-    <!-- object literal (with unquoted and quoted property names) -->
-    <div data-bind="with: { emotion: 'happy', 'facial-expression': 'smile' }">
-        Emotion: <span data-bind="text: emotion"></span>,
-        Facial expression: <span data-bind="text: $data['facial-expression']"></span>
-    </div>
+    <select data-bind="
+        options: availableCountries,
+        optionsText: 'countryName',
+        value: selectedCountry,
+        optionsCaption: 'Choose...'
+    "></select>
 
 </body>
 </html>
