@@ -14,39 +14,34 @@
         });
     </script>
     <style>
-        pre {
-            background-color: #cffad1;
+        .template.active {
+            color: #0078ce;
+        }
+        .template.inactive {
+            color: #ee3700;
         }
     </style>
 </head>
 <body>
     <div class="test">Test</div>
 
-    <div data-bind="
+    <ul data-bind="
         template: {
-            name: 'person-template',
-            foreach: persons,
-            afterRender: myPostProcessingLogic
+            name: displayMode,
+            foreach: employees
         }
-    "></div>
+    "></ul>
 
-    <script type="text/html" id="person-template">
-        <h2>Name: <span data-bind="text: name"></span></h2>
-        <p>Score: <span data-bind="text: score"></span></p>
+    <script type="text/html" id="active">
+        <div class="template active">
+            <span data-bind="text: name"></span>: <strong>active</strong>
+        </div>
     </script>
 
-    <hr>
-
-    <h3>"afterRender" callback function picks up rendered results of H2 tags</h3>
-    <div data-bind="
-        template: {
-            name: 'rendererd-h2-tag-template',
-            foreach: renderedH2Tags
-        }
-    "></div>
-
-    <script type="text/html" id="rendererd-h2-tag-template">
-        <pre data-bind="text: $data"></pre>
+    <script type="text/html" id="inactive">
+        <div class="template inactive">
+            <span data-bind="text: name"></span>: <strong>inactive</strong>
+        </div>
     </script>
 
 </body>

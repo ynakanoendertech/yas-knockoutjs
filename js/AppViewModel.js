@@ -5,16 +5,19 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.persons = ko.observableArray([
-            { name: 'Bob', score: 10 },
-            { name: 'Kat', score: 20 }
+        self.employees = ko.observableArray([
+            { name: "Kari", active: ko.observable(true) },
+            { name: "Bryan", active: ko.observable(false) },
+            { name: "Nora", active: ko.observable(false) }
         ]);
 
-        self.renderedH2Tags = ko.observableArray([]);
-        self.myPostProcessingLogic = function(elements) {
-            var h2text = elements[1].innerHTML;
-            self.renderedH2Tags.push( h2text );
+        self.displayMode = function(employee) {
+            return employee.active() ? "active" : "inactive";
         };
+
+        setTimeout(function() {
+            self.employees()[1].active(true);  // Set active template for "Bryan"
+        }, 3000);
     }
 
     return AppViewModel;
