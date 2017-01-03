@@ -13,37 +13,40 @@
             });
         });
     </script>
+    <style>
+        pre {
+            background-color: #cffad1;
+        }
+    </style>
 </head>
 <body>
     <div class="test">Test</div>
 
-    <ul data-bind="
+    <div data-bind="
         template: {
-            name: 'seasonTemplate',
-            foreach: seasons,
-            as: 'season'
+            name: 'person-template',
+            foreach: persons,
+            afterRender: myPostProcessingLogic
         }
-    "></ul>
+    "></div>
 
-    <script type="text/html" id="seasonTemplate">
-        <li>
-            <strong data-bind="text: name"></strong>
-            <ul data-bind="
-                template: {
-                    name: 'monthTemplate',
-                    foreach: months,
-                    as: 'month'
-                }
-            "></ul>
-        </li>
+    <script type="text/html" id="person-template">
+        <h2>Name: <span data-bind="text: name"></span></h2>
+        <p>Score: <span data-bind="text: score"></span></p>
     </script>
 
-    <script type="text/html" id="monthTemplate">
-        <li>
-            <span data-bind="text: month"></span>
-            is in
-            <span data-bind="text: season.name"></span>
-        </li>
+    <hr>
+
+    <h3>"afterRender" callback function picks up rendered results of H2 tags</h3>
+    <div data-bind="
+        template: {
+            name: 'rendererd-h2-tag-template',
+            foreach: renderedH2Tags
+        }
+    "></div>
+
+    <script type="text/html" id="rendererd-h2-tag-template">
+        <pre data-bind="text: $data"></pre>
     </script>
 
 </body>

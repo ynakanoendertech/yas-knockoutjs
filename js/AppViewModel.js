@@ -5,12 +5,16 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.seasons = ko.observableArray([
-            { name: 'Spring', months: [ 'March', 'April', 'May' ] },
-            { name: 'Summer', months: [ 'June', 'July', 'August' ] },
-            { name: 'Autumn', months: [ 'September', 'October', 'November' ] },
-            { name: 'Winter', months: [ 'December', 'January', 'February' ] }
+        self.persons = ko.observableArray([
+            { name: 'Bob', score: 10 },
+            { name: 'Kat', score: 20 }
         ]);
+
+        self.renderedH2Tags = ko.observableArray([]);
+        self.myPostProcessingLogic = function(elements) {
+            var h2text = elements[1].innerHTML;
+            self.renderedH2Tags.push( h2text );
+        };
     }
 
     return AppViewModel;
