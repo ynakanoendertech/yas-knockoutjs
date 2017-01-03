@@ -20,8 +20,11 @@
     <div data-bind="text: name"></div>
 
     <div data-bind="with: manager">
-        <!-- Now we're inside a nested binding context -->
-        <span data-bind="text: name"></span> is the manager of <span data-bind="text: $parent.name"></span>
+        <div>
+            <!-- Now we're inside a nested binding context -->
+            <span data-bind="text: name"></span> is the manager of <span data-bind="text: $parent.name"></span>
+        </div>
+        <div data-bind="text: $parents[0].name"></div>
     </div>
 
 </body>
