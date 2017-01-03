@@ -5,7 +5,8 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.myMessage = ko.observable("hello");
+        self.hasCellphone = ko.observable(true);
+        self.cellphoneNumber = ko.observable("111-222-3333");
     }
 
     return AppViewModel;

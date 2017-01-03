@@ -17,6 +17,8 @@
 <body>
     <div class="test">Test</div>
 
-    Today's messsage is: <span data-bind="text: myMessage"></span>
+    <input type="checkbox" data-bind="checked: hasCellphone" />
+    Cellphone: <input data-bind="value: cellphoneNumber, enable: hasCellphone()" />
+
 </body>
 </html>
