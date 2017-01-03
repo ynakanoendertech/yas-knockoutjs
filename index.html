@@ -18,7 +18,7 @@
     <div class="test">Test</div>
 
     <input type="checkbox" data-bind="checked: hasCellphone" />
-    Cellphone: <input data-bind="value: cellphoneNumber, enable: hasCellphone()" />
+    Cellphone: <input data-bind="value: cellphoneNumber, enable: hasCellphone(), dummyBindingHandler: 'aaa'" />
 
 </body>
 </html>
