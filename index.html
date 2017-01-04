@@ -13,13 +13,14 @@
             });
         });
     </script>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
     <div class="test">Test</div>
-
-    <div>Endter a numeric value: <input data-bind="textInput: attemptedValue" /></div>
-    <div class="error" data-bind="visible: !lastInputWasValid()">That's not a number!</div>
-    <div>(Accepted value: <strong data-bind="text: acceptedNumericValue"></strong>)</div>
 
 </body>
 </html>
