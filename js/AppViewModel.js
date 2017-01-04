@@ -3,6 +3,10 @@ define(['ko'], function(ko) {
 
     // Custom binding
     ko.bindingHandlers.slideVisible = {
+        init: function(element, valueAccessor) {
+            var value = ko.unwrap(valueAccessor());
+            $(element).toggle(value);
+        },
         update: function(element, valueAccessor, allBindings) {
 
             // First get the latest data that we're bound to
@@ -24,6 +28,10 @@ define(['ko'], function(ko) {
     };
 
     ko.bindingHandlers.fadeVisible = {
+        init: function(element, valueAccessor) {
+            var value = ko.unwrap(valueAccessor());
+            $(element).toggle(value);
+        },
         update: function(element, valueAccessor, allBindings) {
             var value = valueAccessor();
             var valueUnwrapped = ko.unwrap(value);
@@ -40,8 +48,8 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.giftWrap = ko.observable(true);
-        self.giftCard = ko.observable(true);
+        self.giftWrap = ko.observable(false);
+        self.giftCard = ko.observable(false);
     }
 
     return AppViewModel;
