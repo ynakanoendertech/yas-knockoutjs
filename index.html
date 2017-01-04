@@ -13,21 +13,29 @@
             });
         });
     </script>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
     <div class="test">Test</div>
 
-    <div data-bind="text: name"></div>
+    <ul data-bind="foreach: ['cats', 'dogs', 'fish']">
+        <li>
+            <strong data-bind="text: $index() + 1"></strong>:
+            <span data-bind="text: $data"></span>
 
-    <div data-bind="with: manager">
-        <div>
-            <!-- Now we're inside a nested binding context -->
-            <span data-bind="text: name"></span> is the manager of <span data-bind="text: $parent.name"></span>
-        </div>
-        <div data-bind="text: $parents[0].name"></div>
-        <div data-bind="text: $parents.length"></div>
-        <div data-bind="text: $root.name"></div>
-    </div>
+            <ul data-bind="foreach: ['Apple', 'Banana', 'Cinnamon']">
+                <li>
+                    <strong data-bind="text: $parentContext.$index() + 1"></strong> -
+                    <strong data-bind="text: $index() + 1"></strong>:
+                    <span data-bind="text: $data"></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
 </body>
 </html>

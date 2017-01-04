@@ -5,10 +5,6 @@ define(['ko'], function(ko) {
     function AppViewModel() {
         var self = this;
 
-        self.name = ko.observable("Bob");
-        self.manager = ko.observable({
-            name: "Kat"
-        });
     }
 
     return AppViewModel;
