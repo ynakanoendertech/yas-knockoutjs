@@ -23,11 +23,25 @@ define(['ko'], function(ko) {
         }
     };
 
+    ko.bindingHandlers.fadeVisible = {
+        update: function(element, valueAccessor, allBindings) {
+            var value = valueAccessor();
+            var valueUnwrapped = ko.unwrap(value);
+            var duration = allBindings.get('fadeDuration') || 400;
+            if (valueUnwrapped == true) {
+                $(element).fadeIn(duration);
+            } else {
+                $(element).fadeOut(duration);
+            }
+        }
+    };
+
     // View model
     function AppViewModel() {
         var self = this;
 
         self.giftWrap = ko.observable(true);
+        self.giftCard = ko.observable(true);
     }
 
     return AppViewModel;
