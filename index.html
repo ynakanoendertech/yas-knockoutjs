@@ -22,22 +22,5 @@
 <body>
     <div class="test">Test</div>
 
-    <ul data-bind="foreach: ['cats', 'dogs', 'fish']">
-        <li>
-            <strong data-bind="text: $index() + 1"></strong>:
-            <span data-bind="text: $data"></span>
-
-            <ul data-bind="foreach: ['Apple', 'Banana', 'Cinnamon']">
-                <li>
-                    <strong data-bind="text: $parentContext.$index() + 1"></strong> -
-                    <strong data-bind="text: $index() + 1"></strong>:
-                    <span data-bind="text: $data"></span>
-                </li>
-            </ul>
-        </li>
-    </ul>
-
-    <div id="item1" data-bind="text: $element.id"></div>
-
 </body>
 </html>
