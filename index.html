@@ -26,5 +26,16 @@
         <!-- This will display Original, because bindings are not applied -->
         <div data-bind="text: 'Replacement'">Original</div>
     </div>
+
+    <hr>
+
+    <div data-bind="withProperties: { emotion: 'happy' }">
+        Today I feel <span data-bind="text: emotion"></span>.
+    </div>
+
+    <div data-bind="withProperties: { emotion: 'whimsical' }">
+        Today I feel <span data-bind="text: emotion"></span>
+    </div>
+
 </body>
 </html>
